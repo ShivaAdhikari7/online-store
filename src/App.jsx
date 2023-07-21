@@ -1,13 +1,17 @@
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home/Home";
+
 import Layout from "./components/Layout/Layout";
-import SearchField from "./components/Input/SearchField";
-// import Products from "./components/Products/Products";
 import ProductDetails from "./components/Products/ProductDetails/ProductDetails";
 
 const App = () => {
   return (
     <Layout>
-      <SearchField />
-      <ProductDetails />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+      </Routes>
     </Layout>
   );
 };

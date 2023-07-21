@@ -2,6 +2,8 @@ import FullStar from "../../Icons/FullStar";
 import HalfStar from "../../Icons/HalfStar";
 
 const Ratings = (props) => {
+  console.log(props);
+
   const { rate, count } = props.rating;
 
   const roundedRating = Math.round(rate * 2) / 2;

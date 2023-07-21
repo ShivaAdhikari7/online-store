@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import Button from "../../Button/Button";
 import Ratings from "../Ratings/Ratings";
 
@@ -7,11 +9,17 @@ const Product = (props) => {
   return (
     <div className={`${className || ""}`}>
       <div className="product-card d-flex align-items-center flex-column gap-4 px-4 py-2 w-100 h-100 position-relative">
-        <img src={productInfo.image} alt={productInfo.title} />
+        <NavLink state={{ productInfo }} to={`products/${productInfo.id}`}>
+          <img src={productInfo.image} alt={productInfo.title} />
+        </NavLink>
 
         <ul className="product-info d-flex flex-column gap-3 pt-3 pb-1 w-100">
           <li className="product-price">$ {productInfo.price}</li>
-          <li className="product-title">{productInfo.title}</li>
+          <li className="product-title">
+            <NavLink state={{ productInfo }} to={`products/${productInfo.id}`}>
+              {productInfo.title}
+            </NavLink>
+          </li>
           <Ratings rating={productInfo.rating} />
         </ul>
 
