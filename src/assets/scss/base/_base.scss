@@ -9,6 +9,23 @@
   }
 }
 
+.btn {
+  transition: all 0.35s;
+  border: none;
+
+  &-pill {
+    border-radius: 10rem;
+  }
+
+  &-primary {
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: $primary-tint-2;
+    }
+  }
+}
+
 .footer {
   font-size: 1.5rem;
   font-weight: 500;

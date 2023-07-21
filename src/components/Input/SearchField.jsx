@@ -4,7 +4,7 @@ const SearchField = (props) => {
   const { value, onInputChange, onProductSearch } = props;
 
   return (
-    <div className="search-field w-25 d-flex align-items-stretch justify-content-between">
+    <div className="search-field w-25 d-flex align-items-stretch justify-content-between mb-5">
       <input
         type="text"
         id="search-field"
