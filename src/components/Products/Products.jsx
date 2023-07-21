@@ -23,8 +23,13 @@ const Products = () => {
         <LoadingSpinner />
       ) : (
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-5 gy-5 mb-5">
-          {allProducts.map((product) => (
-            <Product productInfo={product} key={product.id} className="col" />
+          {allProducts.map((product, index) => (
+            <Product
+              productIndex={index}
+              productInfo={product}
+              key={product.id}
+              className="col"
+            />
           ))}
         </div>
       )}

@@ -33,6 +33,26 @@
       background-color: $primary-tint-2;
     }
   }
+
+  &-secondary {
+    background-color: $secondary-color;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      background-color: $secondary-tint-2;
+    }
+  }
+}
+
+.star {
+  width: 1rem;
+  height: 1rem;
+
+  path {
+    fill: $primary-tint-1;
+  }
 }
 
 .footer {
