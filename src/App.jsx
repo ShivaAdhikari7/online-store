@@ -1,5 +1,7 @@
+import Layout from "./components/Layout/Layout";
+
 const App = () => {
-  return <div>OnlineStore</div>;
+  return <Layout>Children</Layout>;
 };
 
 export default App;

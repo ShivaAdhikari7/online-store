@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+.heading {
+  &-primary {
+    font-size: 3rem;
+    font-weight: 600;
+    color: $primary-color;
+    letter-spacing: -0.0469rem;
+  }
+}
+
+.footer {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
