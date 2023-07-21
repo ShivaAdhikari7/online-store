@@ -2,7 +2,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer d-flex align-items-center justify-content-center">
+    <footer className="footer text-center">
       Copyright &copy; {currentYear}, OnlineStore
     </footer>
   );

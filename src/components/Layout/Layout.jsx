@@ -5,7 +5,7 @@ const Layout = (props) => {
   const { children } = props;
 
   return (
-    <div className="container-fluid px-5 py-4 ">
+    <div className="container-fluid px-5 py-4 position-relative">
       <Header />
       {children}
       <Footer />

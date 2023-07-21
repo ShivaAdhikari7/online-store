@@ -5,6 +5,10 @@
   border-radius: 0.5rem;
   transition: all 0.35s;
 
+  img {
+    aspect-ratio: 272/389;
+  }
+
   &:hover {
     transform: translateY(-0.625rem);
   }
@@ -31,7 +35,8 @@
       font-weight: 500;
       transition: all 0.25s;
 
-      &:hover {
+      &:hover,
+      &:active {
         color: $primary-color;
       }
     }

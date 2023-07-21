@@ -7,6 +7,12 @@
     color: $primary-color;
     letter-spacing: -0.0469rem;
   }
+
+  &-secondary {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: $black-tint-5;
+  }
 }
 
 .btn {
@@ -20,7 +26,10 @@
   &-primary {
     background-color: $primary-color;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
       background-color: $primary-tint-2;
     }
   }
