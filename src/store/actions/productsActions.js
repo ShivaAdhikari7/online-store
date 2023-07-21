@@ -9,8 +9,6 @@ export const fetchAllProducts = () => async (dispatch) => {
 
     const allProducts = await fetchProducts();
 
-    console.log(allProducts);
-
     dispatch(productActions.updateProducts(allProducts));
     dispatch(uiActions.updateUI({ isLoading: false }));
   } catch (errors) {
