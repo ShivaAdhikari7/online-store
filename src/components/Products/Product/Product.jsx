@@ -1,5 +1,5 @@
 import Button from "../../Button/Button";
-import Ratings from "../Ratings/Ragings";
+import Ratings from "../Ratings/Ratings";
 
 const Product = (props) => {
   const { className, productInfo, productIndex } = props;
