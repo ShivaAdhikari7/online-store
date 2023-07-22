@@ -1,6 +1,8 @@
 @use "../abstracts/variables" as *;
 
 .search-field {
+  width: 30%;
+
   input {
     border: 0.0625rem solid $primary-color;
     border-radius: 10rem 0 0 10rem;
@@ -11,14 +13,19 @@
     background-color: $primary-color;
     border-radius: 0 10rem 10rem 0;
     cursor: pointer;
+    transition: all 0.35s;
 
     .search-icon {
-      width: 1.5rem;
+      width: 3rem;
       height: 1.5rem;
 
       path {
         fill: $white;
       }
+    }
+
+    &:hover {
+      background-color: $primary-tint-1;
     }
   }
 }

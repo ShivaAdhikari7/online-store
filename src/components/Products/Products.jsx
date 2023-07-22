@@ -10,7 +10,9 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const { allProducts } = useSelector((state) => state.product);
-  const { isLoading, userMessage } = useSelector((state) => state.ui);
+  const { isLoading, userMessage, searchTerm } = useSelector(
+    (state) => state.ui
+  );
 
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -18,6 +20,11 @@ const Products = () => {
 
   const productsContent = () => {
     if (isLoading) return <LoadingSpinner />;
+
+    if (!allProducts.length)
+      return (
+        <p className="user-message text-center">😟 No any products found!</p>
+      );
 
     if (!isLoading && userMessage === "error")
       return (
@@ -42,7 +49,11 @@ const Products = () => {
 
   return (
     <>
-      <h2 className="heading-secondary mb-5">All Products</h2>
+      {!isLoading && (
+        <h2 className="heading-secondary mb-5">
+          {searchTerm || "All"} Products
+        </h2>
+      )}
       {productsContent()}
     </>
   );
