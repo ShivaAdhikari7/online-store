@@ -45,3 +45,15 @@ ol {
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 78em) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  html {
+    font-size: 0.75rem;
+  }
+}

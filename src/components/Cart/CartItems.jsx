@@ -8,7 +8,7 @@ const CartItems = () => {
   return (
     <div className="container mb-5 h-100 position-relative">
       {items.length ? (
-        <div className="w-75 m-auto">
+        <div className="cart-container w-75 m-lg-auto">
           <div className="row mb-4 fw-bold">
             <div className="col-6">Product Details</div>
             <div className="col-2 text-center">Quantity</div>
