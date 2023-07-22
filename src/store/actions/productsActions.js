@@ -12,6 +12,6 @@ export const fetchAllProducts = () => async (dispatch) => {
     dispatch(productActions.updateProducts(allProducts));
     dispatch(uiActions.updateUI({ isLoading: false }));
   } catch (errors) {
-    dispatch(uiActions.updateUI({ isLoading: false }));
+    dispatch(uiActions.updateUI({ isLoading: false, userMessage: "error" }));
   }
 };

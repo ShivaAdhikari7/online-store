@@ -9,14 +9,17 @@ const Footer = () => {
 
   const { isLoading } = useSelector((state) => state.ui);
   const { items } = useSelector((state) => state.cart);
+  const { allProducts } = useSelector((state) => state.product);
 
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
-    isLoading || (items.length <= 3 && location.pathname.includes("/cart"))
+    isLoading ||
+    (items.length <= 3 && location.pathname.includes("/cart")) ||
+    !allProducts.length
       ? setFooterClassName("w-100 position-fixed bottom-2")
       : setFooterClassName("");
-  }, [items, isLoading, location.pathname]);
+  }, [items, isLoading, location.pathname, allProducts]);
 
   return (
     <footer className={`footer text-center ${footerClassName}`}>

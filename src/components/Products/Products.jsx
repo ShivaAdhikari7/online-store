@@ -10,29 +10,40 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const { allProducts } = useSelector((state) => state.product);
-  const { isLoading } = useSelector((state) => state.ui);
+  const { isLoading, userMessage } = useSelector((state) => state.ui);
 
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, []);
 
+  const productsContent = () => {
+    if (isLoading) return <LoadingSpinner />;
+
+    if (!isLoading && userMessage === "error")
+      return (
+        <p className="text-danger user-message text-center">
+          😟 Error while fetching products !
+        </p>
+      );
+
+    return (
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-5 gy-5 mb-5">
+        {allProducts.map((product, index) => (
+          <Product
+            productIndex={index}
+            productInfo={product}
+            key={product.id}
+            className="col"
+          />
+        ))}
+      </div>
+    );
+  };
+
   return (
     <>
       <h2 className="heading-secondary mb-5">All Products</h2>
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-5 gy-5 mb-5">
-          {allProducts.map((product, index) => (
-            <Product
-              productIndex={index}
-              productInfo={product}
-              key={product.id}
-              className="col"
-            />
-          ))}
-        </div>
-      )}
+      {productsContent()}
     </>
   );
 };
