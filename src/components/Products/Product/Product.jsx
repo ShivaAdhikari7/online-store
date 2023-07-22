@@ -54,7 +54,7 @@ const Product = (props) => {
 
         <Button
           onClick={addToCartHandler}
-          className="w-100 py-3 btn-primary btn-pill mb-2"
+          className="w-100 py-3 btn-primary btn-pill mb-2 mt-auto"
         >
           Add to cart
         </Button>
