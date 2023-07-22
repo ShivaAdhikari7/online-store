@@ -1,10 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import Button from "../../Button/Button";
 import Ratings from "../Ratings/Ratings";
 
+import { cartActions } from "../../../store/slices/cart";
+
 const Product = (props) => {
+  const dispatch = useDispatch();
+
   const { className, productInfo, productIndex } = props;
+
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addItemToCart({
+        id: productInfo.id,
+        title: productInfo.title,
+        category: productInfo.category,
+        image: productInfo.image,
+        price: productInfo.price,
+      })
+    );
+  };
 
   return (
     <div className={`${className || ""}`}>
@@ -23,7 +40,10 @@ const Product = (props) => {
           <Ratings rating={productInfo.rating} />
         </ul>
 
-        <Button className="w-100 py-3 btn-primary btn-pill mb-2">
+        <Button
+          onClick={addToCartHandler}
+          className="w-100 py-3 btn-primary btn-pill mb-2"
+        >
           Add to cart
         </Button>
 
