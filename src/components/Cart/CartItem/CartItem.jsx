@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 import { cartActions } from "../../../store/slices/cart";
 
@@ -7,6 +8,17 @@ const CartItem = ({ cartItem }) => {
 
   const removeCartItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(cartItem.id));
+
+    toast.success("Removed item from cart", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   return (

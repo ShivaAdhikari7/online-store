@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 import Button from "../../Button/Button";
 import Ratings from "../Ratings/Ratings";
@@ -23,6 +24,17 @@ const ProductDetails = () => {
         price: productInfo.price,
       })
     );
+
+    toast.success("Added item to cart", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   return (

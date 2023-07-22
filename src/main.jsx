@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 
 import "./assets/scss/index.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 import store from "./store";
 
