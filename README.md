@@ -2,7 +2,7 @@
 
 OnlineStore displays all the products in the home page with search field. User can click on any of the product to see more detailed information about the product. Also, users can search for any particular product by simply providing the category name on the search input field.
 
-##Live demo Url:
+## Live demo Url:
 https://shiva-adhikari-online-store.netlify.app/
 
 ## How to install
